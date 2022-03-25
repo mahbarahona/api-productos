@@ -1,3 +1,4 @@
+require('dotenv').config({path: __dirname + '/.env'});
 
 const express        = require('express');
 const cors           = require('cors');
@@ -29,10 +30,10 @@ app.use('/api',( req, res) =>{
 
 
 //server
-const puerto = process.env.PORT || 3000;
+const puerto = process.env.SERVER_PORT || 3000;
 
 app.listen( puerto, ()=>{
-    console.log(`Servidor en puerto ${puerto},http://localhost:${puerto}`)
+    console.log(`Servidor en puerto ${puerto} - http://localhost:${puerto}`)
 })
 
 
